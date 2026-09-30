@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { PHONE_DISPLAY, PHONE_HREF } from '@/lib/data';
 
 const field: React.CSSProperties = { border: '1px solid var(--line-2)', borderRadius: 8, padding: 14, fontSize: 16, background: '#fff' };
-const pair: React.CSSProperties = { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 };
 
 const PROJECT_TYPES = ['Kitchen', 'Bathroom / Shower', 'Basement', 'Flooring & Tile', 'Deck / Porch', 'Siding / Roofing / Gutters', 'Other'];
 
@@ -25,12 +24,12 @@ export default function ContactForm() {
   return (
     <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
       <div className="display" style={{ fontSize: 28, marginBottom: 4 }}>Get Your Free Estimate!</div>
-      <div style={pair}>
+      <div className="form-pair">
         <input required name="name" placeholder="Name" aria-label="Name" style={field} />
         <input required name="phone" placeholder="Phone" aria-label="Phone" type="tel" style={field} />
       </div>
       <input name="email" placeholder="Email" aria-label="Email" type="email" style={field} />
-      <div style={pair}>
+      <div className="form-pair">
         <input name="city" placeholder="City" aria-label="City" style={field} />
         <select name="projectType" aria-label="Project type" defaultValue="" style={{ ...field, color: 'var(--ink)' }}>
           <option value="" disabled>Project type</option>

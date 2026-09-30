@@ -20,7 +20,7 @@ export default function CareersPage() {
           </div>
         </div>
       </div>
-      <div style={{ maxWidth: 960, margin: '0 auto', padding: '64px 48px 88px', display: 'flex', flexDirection: 'column' }}>
+      <div className="narrow" style={{ paddingTop: 64, paddingBottom: 88, display: 'flex', flexDirection: 'column' }}>
         {JOBS.map((title, i) => (
           <div key={title} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 20, padding: '24px 0', borderTop: '1px solid var(--line)' }}>
             <span style={{ display: 'flex', gap: 18, alignItems: 'baseline' }}>

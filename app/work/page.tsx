@@ -19,7 +19,7 @@ export default function WorkPage() {
             <span className="eyebrow">OUR WORK</span>
             <h1 className="page-title">Interior &amp; Exterior remodeling done right.</h1>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 20 }}>
             {CARDS.map((c) => (
               <Link key={c.href} href={c.href} style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', height: 340, display: 'flex', alignItems: 'flex-end' }}>
                 <img src={c.img} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />

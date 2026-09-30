@@ -27,7 +27,7 @@ export default function Gallery() {
           })}
         </div>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 16 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(280px,100%),1fr))', gap: 16 }}>
         {items.map((g) => (
           <div key={g.title} data-testid="gallery-item" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <img src={g.img} alt={g.title} style={{ width: '100%', height: 280, objectFit: 'cover', borderRadius: 12, background: 'var(--tint)' }} />

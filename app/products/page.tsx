@@ -19,7 +19,7 @@ export default function ProductsPage() {
           <p className="lead" style={{ maxWidth: 720 }}>See decking colors, siding samples, flooring and tile in person at our Teays Valley showroom.</p>
         </div>
       </div>
-      <div className="wrap" style={{ paddingTop: 64, paddingBottom: 88, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 20 }}>
+      <div className="wrap" style={{ paddingTop: 64, paddingBottom: 88, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: 20 }}>
         {PRODUCTS.map((p) => (
           <div key={p.cat} className="card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <img src={p.img} alt="" style={{ width: '100%', height: 240, objectFit: 'cover' }} />

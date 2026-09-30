@@ -23,7 +23,7 @@ export default function FinancingPage() {
   return (
     <>
       <div className="tint">
-        <div className="wrap" style={{ paddingTop: 72, paddingBottom: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(360px,1fr))', gap: '24px 56px' }}>
+        <div className="wrap" style={{ paddingTop: 72, paddingBottom: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(360px,100%),1fr))', gap: '24px 56px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <span className="eyebrow">FINANCING</span>
             <h1 className="display" style={{ fontSize: 'clamp(38px,4.4vw,56px)', letterSpacing: '-.03em', lineHeight: 1.04, margin: 0, textWrap: 'balance' }}>Remodeling Financing &amp; Monthly Payment Options</h1>
@@ -37,7 +37,7 @@ export default function FinancingPage() {
       </div>
       <div className="wrap" style={{ paddingTop: 72, paddingBottom: 88, display: 'flex', flexDirection: 'column', gap: 28 }}>
         <h2 className="display" style={{ fontSize: 40, letterSpacing: '-.025em', margin: 0 }}>Financing Options</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))', gap: 20 }}>
           {OPTIONS.map((o) => (
             <div key={o.label} className="card" style={{ padding: 30, display: 'flex', flexDirection: 'column', gap: 14 }}>
               <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '.12em', color: 'var(--green)' }}>{o.label}</span>

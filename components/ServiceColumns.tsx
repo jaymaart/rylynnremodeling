@@ -16,7 +16,7 @@ function Column({ href, label, list }: { href: string; label: string; list: Read
 
 export default function ServiceColumns() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: 48 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 48 }}>
       <Column href="/interior" label="INTERIOR" list={INTERIOR_ITEMS} />
       <Column href="/exterior" label="EXTERIOR" list={EXTERIOR_ITEMS} />
     </div>

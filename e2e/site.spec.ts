@@ -42,7 +42,7 @@ test('unknown route returns 404', async ({ page }) => {
 
 test('nav dropdowns open on hover and navigate', async ({ page }) => {
   await page.goto('/');
-  const nav = page.locator('header nav');
+  const nav = page.locator('header nav[aria-label="Main"]');
   await nav.getByRole('button', { name: 'Our Work' }).hover();
   await nav.getByRole('link', { name: /Exterior/ }).click();
   await expect(page).toHaveURL(/\/exterior$/);

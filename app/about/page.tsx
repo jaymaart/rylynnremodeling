@@ -3,7 +3,7 @@ import CtaBand from '@/components/CtaBand';
 
 export const metadata: Metadata = { title: 'About Us' };
 
-const row: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '24px 56px', padding: '32px 0', borderTop: '1px solid var(--line)' };
+const row: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: '24px 56px', padding: '32px 0', borderTop: '1px solid var(--line)' };
 const rowTitle: React.CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 30, letterSpacing: '-.02em', margin: 0 };
 const rowText: React.CSSProperties = { fontSize: 18, lineHeight: 1.65, margin: 0, color: 'var(--ink-2)' };
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
       </div>
       <div className="wrap" style={{ paddingBottom: 88, display: 'flex', flexDirection: 'column', gap: 32 }}>
         <h2 className="display" style={{ fontSize: 44, letterSpacing: '-.025em', margin: 0 }}>Meet The Team</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: 24 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 24 }}>
           {TEAM.map((t) => (
             <div key={t.name} className="card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <img src={t.img} alt={t.name} style={{ width: '100%', height: 360, objectFit: 'cover', objectPosition: 'top' }} />

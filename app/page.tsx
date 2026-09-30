@@ -13,7 +13,7 @@ const GOOGLE_COLORS: ReadonlyArray<[string, string]> = [['G', '#4285f4'], ['o', 
 export default function HomePage() {
   return (
     <>
-      <div className="wrap" style={{ paddingTop: 72, paddingBottom: 72, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(380px,1fr))', gap: 56, alignItems: 'center' }}>
+      <div className="wrap" style={{ paddingTop: 72, paddingBottom: 72, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(380px,100%),1fr))', gap: 56, alignItems: 'center' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 26 }}>
           <span style={{ display: 'flex', gap: 8, alignItems: 'center', fontSize: 14, fontWeight: 500, background: 'var(--tint)', padding: '7px 12px', borderRadius: 999, alignSelf: 'flex-start' }}>★★★★★ 4.8 from 70+ Reviews</span>
           <h1 className="display" style={{ fontSize: 'clamp(46px,5.4vw,72px)', lineHeight: 1.02, letterSpacing: '-.03em', margin: 0, textWrap: 'balance' }}>
@@ -27,14 +27,14 @@ export default function HomePage() {
           <Link href="/ballpark" style={{ fontSize: 16, fontWeight: 500, color: 'var(--ink-2)', marginTop: -10 }}>
             Just curious about cost? <span style={{ color: 'var(--green)', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: 3 }}>See an instant ballpark price →</span>
           </Link>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: 20, paddingTop: 22, borderTop: '1px solid var(--line)', fontSize: 14, color: 'var(--muted)' }}>
+          <div className="stats-grid" style={{ paddingTop: 22, borderTop: '1px solid var(--line)', fontSize: 14, color: 'var(--muted)' }}>
             <div><div style={stat}>4.8★</div>70+ Reviews</div>
             <div><div style={stat}>A+</div>BBB Rated</div>
             <div><div style={stat}>WV</div>Licensed &amp; Insured</div>
             <div><Link href="/financing"><div style={stat}>$</div>Financing Available</Link></div>
           </div>
         </div>
-        <img src="https://static.wixstatic.com/media/66ee84_d1123a8a87db4be894196ab2cf85a3fe~mv2.jpeg/v1/fill/w_1200,h_1400,al_c,q_85/hero.jpeg" alt="" style={{ width: '100%', height: 600, objectFit: 'cover', borderRadius: '240px 240px 16px 16px' }} />
+        <img src="https://static.wixstatic.com/media/66ee84_d1123a8a87db4be894196ab2cf85a3fe~mv2.jpeg/v1/fill/w_1200,h_1400,al_c,q_85/hero.jpeg" alt="" className="home-hero-img" />
       </div>
 
       <div className="wrap" style={{ paddingBottom: 64 }}>
@@ -53,7 +53,7 @@ export default function HomePage() {
       </div>
 
       <div className="tint">
-        <div className="wrap" style={{ paddingTop: 88, paddingBottom: 88, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: 56, alignItems: 'center' }}>
+        <div className="wrap" style={{ paddingTop: 88, paddingBottom: 88, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))', gap: 56, alignItems: 'center' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
             <h2 className="display" style={{ fontSize: 46, letterSpacing: '-.025em', margin: 0, lineHeight: 1.05 }}>Still Dealing With...</h2>
             <div style={{ display: 'flex', flexDirection: 'column', fontSize: 19 }}>
@@ -64,11 +64,11 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderRadius: 16, overflow: 'hidden' }}>
             <div style={{ position: 'relative' }}>
-              <img src="https://static.wixstatic.com/media/66ee84_d7f2598318164477a8e4350c205ef8d6~mv2.jpeg/v1/fill/w_800,h_760,al_c,q_85/before.jpeg" alt="Before" style={{ width: '100%', height: 380, objectFit: 'cover', display: 'block' }} />
+              <img src="https://static.wixstatic.com/media/66ee84_d7f2598318164477a8e4350c205ef8d6~mv2.jpeg/v1/fill/w_800,h_760,al_c,q_85/before.jpeg" alt="Before" className="ba-img" />
               <span style={{ ...badge, background: '#fff' }}>BEFORE</span>
             </div>
             <div style={{ position: 'relative', borderLeft: '4px solid var(--tint)' }}>
-              <img src="https://static.wixstatic.com/media/66ee84_5ff8d758ec12461e8fe6a50e519cda84~mv2.png/v1/fill/w_800,h_760,al_c,q_85/after.png" alt="After" style={{ width: '100%', height: 380, objectFit: 'cover', display: 'block' }} />
+              <img src="https://static.wixstatic.com/media/66ee84_5ff8d758ec12461e8fe6a50e519cda84~mv2.png/v1/fill/w_800,h_760,al_c,q_85/after.png" alt="After" className="ba-img" />
               <span style={{ ...badge, background: 'var(--green)', color: '#fff' }}>AFTER</span>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
 
       <div className="wrap" style={{ paddingBottom: 88, display: 'flex', flexDirection: 'column', gap: 24 }}>
         <span className="eyebrow">WHY CHOOSE RYLYNN FOR YOUR NEXT PROJECT?</span>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(240px,100%),1fr))', gap: 20 }}>
           <div style={whyCard}>{dot}Showroom</div>
           <div style={whyCard}>{dot}Licensed &amp; Insured</div>
           <div style={whyCard}>{dot}Locally Owned &amp; Operated</div>
@@ -109,7 +109,7 @@ export default function HomePage() {
               </span>
             </a>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: 20 }}>
             {REVIEWS.map((r) => (
               <a key={r.name} href={r.url} target="_blank" rel="noopener" className="hover-green-border" style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: 16, padding: 28, display: 'flex', flexDirection: 'column', gap: 18 }}>
                 <span style={{ color: 'var(--star)', fontSize: 18, letterSpacing: 2 }}>★★★★★</span>

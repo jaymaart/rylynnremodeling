@@ -38,7 +38,7 @@ export default function BallparkEstimator() {
       <div style={{ height: 4, background: 'var(--line)' }}>
         <div style={{ height: 4, background: 'var(--green)', width: PROGRESS[step], transition: 'width .3s' }} />
       </div>
-      <div style={{ maxWidth: 960, margin: '0 auto', padding: '56px 48px 72px', display: 'flex', flexDirection: 'column', gap: 32 }}>
+      <div className="narrow" style={{ paddingTop: 56, paddingBottom: 72, display: 'flex', flexDirection: 'column', gap: 32 }}>
         {step === 'pick' && (
           <>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -48,7 +48,7 @@ export default function BallparkEstimator() {
                 Answer a few quick questions and see a real price range in under a minute — no phone call required to get started.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(250px,1fr))', gap: 14 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(250px,100%),1fr))', gap: 14 }}>
               {PROJECTS.map((p) => (
                 <button key={p.key} type="button" data-testid="project-card" onClick={() => goTo('q', p)}
                   style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: 14, overflow: 'hidden', display: 'flex', flexDirection: 'column', padding: 0, textAlign: 'left', color: 'var(--ink)', cursor: 'pointer' }}>
@@ -76,7 +76,7 @@ export default function BallparkEstimator() {
                   <h2 className="display" style={{ fontSize: 28, letterSpacing: '-.02em', margin: 0 }}>{q.title}</h2>
                   {q.hint && <p style={{ fontSize: 16, color: 'var(--muted)', margin: 0 }}>{q.hint}</p>}
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(260px,100%),1fr))', gap: 12 }}>
                   {q.opts.map(([label, sub], oi) => {
                     const on = answers[qi] === oi;
                     return (
@@ -110,7 +110,7 @@ export default function BallparkEstimator() {
               </h1>
               <span style={{ fontSize: 15, color: 'var(--muted)' }}>{summarize(project, chosen)}</span>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 16, paddingTop: 10 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(240px,100%),1fr))', gap: 16, paddingTop: 10 }}>
               {computeTiers(project, chosen).map((t) => (
                 <div key={t.name} data-testid="tier" style={{ position: 'relative', background: '#fff', border: `1.5px solid ${t.popular ? 'var(--green)' : 'var(--line)'}`, borderRadius: 16, padding: '28px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
                   {t.popular && (
@@ -133,7 +133,7 @@ export default function BallparkEstimator() {
             <div style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: 12, padding: '18px 20px', fontSize: 14, lineHeight: 1.6, color: 'var(--muted)' }}>
               This is a ballpark range to help you plan, not a quote. Your final price depends on materials, site conditions, and finishes — we&apos;ll nail it down at your free in-home consultation. *Financing example based on 9.99% APR over 60 months; subject to credit approval.
             </div>
-            <div style={{ background: 'var(--green-dark)', color: '#fff', borderRadius: 20, padding: 48, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, textAlign: 'center' }}>
+            <div className="dark-card" style={{ background: 'var(--green-dark)', color: '#fff', borderRadius: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, textAlign: 'center' }}>
               <h2 className="display" style={{ fontSize: 40, letterSpacing: '-.025em', margin: 0 }}>Want a firm number?</h2>
               <p style={{ fontSize: 17, margin: 0, color: 'var(--on-dark)' }}>Get a detailed, no-pressure estimate built for your exact home. Free in-home consultation.</p>
               <Link href="/contact" className="btn btn-md" style={{ marginTop: 8, background: '#fff', color: 'var(--ink)', padding: '15px 26px' }}>Get my detailed estimate →</Link>

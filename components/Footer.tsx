@@ -7,7 +7,7 @@ const col: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap
 export default function Footer() {
   return (
     <footer className="wrap" style={{ paddingTop: 56, paddingBottom: 32, display: 'flex', flexDirection: 'column', gap: 40, fontSize: 15, color: 'var(--ink-2)' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 32 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(180px,100%),1fr))', gap: 32 }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <img src={LOGO_SRC} alt="Rylynn Remodeling" style={{ height: 48, width: 'auto', alignSelf: 'flex-start' }} />
           <span style={{ fontSize: 14, lineHeight: 1.6 }}>

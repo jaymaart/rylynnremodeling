@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { CITIES, LOGO_SRC } from '@/lib/data';
+import { CITIES, LOGO_SRC, PHONE_DISPLAY, PHONE_HREF } from '@/lib/data';
 
 type MenuKey = 'about' | 'work' | 'area' | 'pricing';
 
@@ -37,7 +37,8 @@ const trigger: React.CSSProperties = {
 
 export default function Header() {
   const [menu, setMenu] = useState<MenuKey | null>(null);
-  const close = () => setMenu(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const close = () => { setMenu(null); setMobileOpen(false); };
 
   const dropdown = (key: MenuKey, label: string, width: number, content: React.ReactNode) => (
     <div style={{ position: 'relative' }} onMouseEnter={() => setMenu(key)}>
@@ -62,11 +63,13 @@ export default function Header() {
 
   return (
     <header style={{ borderBottom: '1px solid var(--line)', background: '#fff', position: 'sticky', top: 0, zIndex: 10 }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '16px 28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
+      <div className="header-inner">
         <Link href="/" onClick={close} style={{ display: 'flex' }}>
           <img src={LOGO_SRC} alt="Rylynn Remodeling" style={{ height: 46, width: 'auto' }} />
         </Link>
         <nav
+          aria-label="Main"
+          className="desktop-nav"
           style={{ display: 'flex', gap: 18, fontSize: 15, fontWeight: 500, color: 'var(--ink-2)', whiteSpace: 'nowrap', marginLeft: 'auto', marginRight: 6, alignItems: 'center' }}
           onMouseLeave={close}
         >
@@ -98,10 +101,39 @@ export default function Header() {
           <Link href="/contact" onClick={close} style={{ padding: '8px 0' }}>Contact</Link>
         </nav>
         <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexShrink: 0 }}>
-          <Link href="/ballpark" style={{ border: '1.5px solid var(--green)', color: 'var(--green)', padding: '9.5px 13px', borderRadius: 8, fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap' }}>Instant Price</Link>
-          <Link href="/contact" style={{ background: 'var(--green)', color: '#fff', padding: '11px 14px', borderRadius: 8, fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap' }}>Free Estimate</Link>
+          <Link href="/ballpark" className="header-instant" style={{ border: '1.5px solid var(--green)', color: 'var(--green)', padding: '9.5px 13px', borderRadius: 8, fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap' }}>Instant Price</Link>
+          <Link href="/contact" onClick={close} style={{ background: 'var(--green)', color: '#fff', padding: '11px 14px', borderRadius: 8, fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap' }}>Free Estimate</Link>
+          <button type="button" className="menu-toggle" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} onClick={() => setMobileOpen(!mobileOpen)}>
+            <span /><span /><span />
+          </button>
         </div>
       </div>
+      {mobileOpen && (
+        <nav aria-label="Mobile" className="mobile-menu">
+          <div className="mobile-menu-group">
+            <span>PRICING</span>
+            <Link href="/ballpark" onClick={close} style={{ color: 'var(--green)', fontWeight: 700 }}>Ballpark Estimate Range →</Link>
+            <Link href="/financing" onClick={close}>Financing</Link>
+          </div>
+          <div className="mobile-menu-group">
+            <span>OUR WORK</span>
+            {WORK.map((l) => <Link key={l.href} href={l.href} onClick={close}>{l.title}</Link>)}
+          </div>
+          <div className="mobile-menu-group">
+            <span>SERVICE AREA</span>
+            <div className="mobile-city-grid">
+              {CITIES.map((c) => <Link key={c.slug} href={`/service-area/${c.slug}`} onClick={close}>{c.name}</Link>)}
+            </div>
+            <Link href="/service-area" onClick={close} style={{ color: 'var(--green)', fontWeight: 700, fontSize: 15 }}>All service areas →</Link>
+          </div>
+          <div className="mobile-menu-group">
+            <span>ABOUT</span>
+            {ABOUT.map((l) => <Link key={l.href} href={l.href} onClick={close}>{l.title}</Link>)}
+            <Link href="/contact" onClick={close}>Contact</Link>
+          </div>
+          <a href={PHONE_HREF} className="btn btn-outline" style={{ marginTop: 18, padding: 14, textAlign: 'center', fontSize: 16 }}>Call {PHONE_DISPLAY}</a>
+        </nav>
+      )}
     </header>
   );
 }
