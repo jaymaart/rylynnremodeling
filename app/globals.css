@@ -1,0 +1,54 @@
+:root {
+  --green-dark: #1d4d33;
+  --green: #25603f;
+  --ink: #16201b;
+  --ink-2: #3d4a43;
+  --muted: #5b6862;
+  --line: #e1e6e3;
+  --line-2: #cfd8d3;
+  --tint: #f3f6f4;
+  --mint: #e6f0ea;
+  --star: #f5a623;
+  --on-dark: #e0ece5;
+  --on-dark-muted: #b9d3c4;
+  --font-display: var(--font-bricolage), sans-serif;
+  --font-body: var(--font-dm-sans), sans-serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; cursor: pointer; }
+a:hover { opacity: .78; }
+input, select, textarea, button { font: inherit; }
+img { max-width: 100%; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding-left: 48px; padding-right: 48px; }
+.tint { background: var(--tint); }
+.display { font-family: var(--font-display); font-weight: 700; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .14em; color: var(--green); }
+.eyebrow-muted { font-size: 13px; font-weight: 700; letter-spacing: .14em; color: var(--muted); }
+.page-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5vw, 60px); letter-spacing: -.03em; line-height: 1.04; margin: 0; }
+.section-title { font-family: var(--font-display); font-weight: 700; font-size: 48px; letter-spacing: -.025em; line-height: 1.05; margin: 0; }
+.lead { font-size: 19px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+.body-text { font-size: 17px; line-height: 1.7; color: var(--ink-2); margin: 0; }
+
+.btn { display: inline-block; border-radius: 8px; font-weight: 700; }
+.btn-primary { background: var(--green); color: #fff; }
+.btn-outline { border: 1.5px solid var(--ink); }
+.btn-lg { padding: 16px 26px; font-size: 17px; }
+.btn-md { padding: 15px 24px; font-size: 16px; }
+
+.pill { align-self: flex-start; background: var(--mint); color: var(--green-dark); font-weight: 700; font-size: 14px; padding: 6px 12px; border-radius: 999px; }
+.card { border: 1px solid var(--line); border-radius: 16px; }
+.hover-tint:hover { background: var(--tint); opacity: 1; }
+.hover-green-border:hover { border-color: var(--green); opacity: 1; }
+
+.page-hero { padding-top: 72px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 16px; }
+.split-hero { padding-top: 72px; padding-bottom: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 48px; align-items: center; }
+.arch { width: 100%; object-fit: cover; border-radius: 200px 200px 16px 16px; }
