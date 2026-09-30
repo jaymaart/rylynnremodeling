@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SocialLinks from '@/components/SocialLinks';
 import { LOGO_SRC, PHONE_HREF } from '@/lib/data';
 
 const colTitle: React.CSSProperties = { fontSize: 12, fontWeight: 700, letterSpacing: '.14em', color: 'var(--ink)' };
@@ -37,9 +38,7 @@ export default function Footer() {
         </div>
         <div style={col}>
           <span style={colTitle}>FOLLOW</span>
-          <a href="https://www.facebook.com/rylynnremodeling">Facebook</a>
-          <a href="https://www.instagram.com/rylynnremodeling/">Instagram</a>
-          <a href="https://www.tiktok.com/@rylynn_remodeling">TikTok</a>
+          <SocialLinks />
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap', paddingTop: 22, borderTop: '1px solid var(--line)', fontSize: 13, color: 'var(--muted)' }}>

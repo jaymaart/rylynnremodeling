@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
+import SocialLinks from '@/components/SocialLinks';
 import { PHONE_DISPLAY, PHONE_HREF } from '@/lib/data';
 
 export const metadata: Metadata = { title: 'Contact' };
@@ -19,6 +20,10 @@ export default function ContactPage() {
           <div className="kv" style={row}><span style={{ color: 'var(--muted)' }}>Showroom</span><span style={{ textAlign: 'right' }}>3218 Teays Valley Road<br />Hurricane, WV 25526</span></div>
           <div className="kv" style={row}><span style={{ color: 'var(--muted)' }}>Mail</span><a href="mailto:rylynnremodeling@gmail.com">rylynnremodeling@gmail.com</a></div>
           <div className="kv" style={{ ...row, borderBottom: '1px solid var(--line)' }}><span style={{ color: 'var(--muted)' }}>Phone</span><a href={PHONE_HREF} style={{ fontWeight: 700 }}>{PHONE_DISPLAY}</a></div>
+        </div>
+        <div data-testid="contact-socials" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, fontSize: 17 }}>
+          <span style={{ color: 'var(--muted)' }}>Follow our projects</span>
+          <SocialLinks />
         </div>
       </div>
       <div className="tint form-panel" style={{ borderRadius: 20 }}>

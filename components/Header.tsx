@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import SocialLinks from '@/components/SocialLinks';
 import { CITIES, LOGO_SRC, PHONE_DISPLAY, PHONE_HREF } from '@/lib/data';
 
 type MenuKey = 'about' | 'work' | 'area' | 'pricing';
@@ -132,6 +133,7 @@ export default function Header() {
             <Link href="/contact" onClick={close}>Contact</Link>
           </div>
           <a href={PHONE_HREF} className="btn btn-outline" style={{ marginTop: 18, padding: 14, textAlign: 'center', fontSize: 16 }}>Call {PHONE_DISPLAY}</a>
+          <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 18 }}><SocialLinks /></div>
         </nav>
       )}
     </header>
