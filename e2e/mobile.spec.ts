@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 const ROUTES = [
   '/', '/about', '/work', '/interior', '/exterior', '/service-area', '/service-area/charleston',
-  '/financing', '/ballpark', '/products', '/careers', '/blog', '/contact',
+  '/financing', '/ballpark', '/products', '/careers', '/blog', '/contact', '/start-date',
 ];
 
 test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
